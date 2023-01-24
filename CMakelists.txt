@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.23.2)
+project(Boids)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
+set(SOURCE_FILES main.cpp Boid.cpp Boid.h)
+
+include_directories(include)
+link_directories(lib)
+
+add_executable(Boids ${SOURCE_FILES})
+target_link_libraries(Boids raylib winmm)
