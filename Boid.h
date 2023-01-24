@@ -11,7 +11,7 @@ class Boid {
     public:
         Vector2 position;
 
-        explicit Boid(Vector2 pos);
+        Boid(Vector2 pos);
         void draw() const;
 };
 
