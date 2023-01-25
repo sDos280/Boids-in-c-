@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Boid.h"
 #include <vector>
-
+#include <iostream>
 
 int main() {
     // Initialization
@@ -13,15 +13,18 @@ int main() {
 
     std::vector<Boid> points;
 
-    points.emplace_back(Vector2{(float) GetRandomValue(0, screenWidth), (float) GetRandomValue(0, screenHeight)},
-                        Vector2{0, 0});
-
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
         Vector2 mousePosition = GetMousePosition();
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-            points.emplace_back(mousePosition, Vector2{0, 0});
+            points.emplace_back(mousePosition,
+                                Vector2{5, 5});
+        }
+
+        for (Boid point: points) {
+            point.update();
+            std::cout << "position:" << point.position.x << " " << point.position.y << std::endl;
         }
 
         BeginDrawing();

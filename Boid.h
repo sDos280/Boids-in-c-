@@ -6,15 +6,15 @@
 #define BOIDS_BOID_H
 
 #include "raylib.h"
+#include "raymath.h"
 
 class Boid {
     public:
+        Vector2 position{};
+        Vector2 velocity{};
         Boid(Vector2 position, Vector2 velocity);
-        void draw() const;
-
-    private:
-        Vector2 position_;
-        Vector2 velocity_;
+        void update();
+        void draw();
 };
 
 

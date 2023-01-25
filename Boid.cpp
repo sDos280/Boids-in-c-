@@ -4,11 +4,17 @@
 
 #include "Boid.h"
 
-void Boid::draw() const {
-    DrawCircleV(position_, 5, {255, 0, 0, 255});
+Boid::Boid(Vector2 position, Vector2 velocity) {
+    position = position;
+    velocity = Vector2Normalize(velocity);
 }
 
-Boid::Boid(Vector2 position, Vector2 velocity) {
-    position_ = position;
-    velocity_ = velocity;
+void Boid::update() {
+    position.x += velocity.x;
+    position.y += velocity.y;
+}
+
+void Boid::draw() {
+    DrawCircleV(position, 10, {255, 0, 0, 255});
+    DrawLineV(position, Vector2Add(position, Vector2Scale(velocity, 10)), {0, 0, 255, 255});
 }
