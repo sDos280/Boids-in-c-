@@ -4,8 +4,11 @@
 
 #include "Boid.h"
 
-Boid::Boid(Vector2 pos) : position(pos) {}
-
 void Boid::draw() const {
-    DrawCircleV(position, 5, {255, 0, 0, 255});
+    DrawCircleV(position_, 5, {255, 0, 0, 255});
+}
+
+Boid::Boid(Vector2 position, Vector2 velocity) {
+    position_ = position;
+    velocity_ = velocity;
 }

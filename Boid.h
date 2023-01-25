@@ -9,11 +9,12 @@
 
 class Boid {
     public:
-        Vector2 position;
-        Vector2 velocity;
-
-        Boid(Vector2 pos);
+        Boid(Vector2 position, Vector2 velocity);
         void draw() const;
+
+    private:
+        Vector2 position_;
+        Vector2 velocity_;
 };
 
 
