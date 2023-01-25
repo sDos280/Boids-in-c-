@@ -3,8 +3,7 @@
 #include <vector>
 
 
-int main()
-{
+int main() {
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -14,25 +13,25 @@ int main()
 
     std::vector<Boid> points;
 
-    points.emplace_back(Vector2{(float)GetRandomValue(0, screenWidth), (float)GetRandomValue(0, screenHeight)});
+    points.emplace_back(Vector2{(float) GetRandomValue(0, screenWidth), (float) GetRandomValue(0, screenHeight)},
+                        Vector2{0, 0});
 
     SetTargetFPS(60);
 
-    while (!WindowShouldClose())
-    {
+    while (!WindowShouldClose()) {
         Vector2 mousePosition = GetMousePosition();
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
-            points.emplace_back(mousePosition);
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            points.emplace_back(mousePosition, Vector2{0, 0});
         }
 
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
-            for (Boid point : points){
-                point.draw();
-            }
+        ClearBackground(RAYWHITE);
+        for (Boid point: points) {
+            point.draw();
+        }
         EndDrawing();
-        
+
     }
 
     CloseWindow();
