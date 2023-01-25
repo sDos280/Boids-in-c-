@@ -10,6 +10,7 @@
 class Boid {
     public:
         Vector2 position;
+        Vector2 velocity;
 
         Boid(Vector2 pos);
         void draw() const;
