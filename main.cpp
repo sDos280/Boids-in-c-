@@ -24,7 +24,6 @@ int main() {
 
         for (Boid point: points) {
             point.update();
-            std::cout << "position:" << point.position.x << " " << point.position.y << std::endl;
         }
 
         BeginDrawing();

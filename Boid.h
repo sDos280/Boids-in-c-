@@ -10,8 +10,8 @@
 
 class Boid {
     public:
-        Vector2 position{};
-        Vector2 velocity{};
+        Vector2 position_{};
+        Vector2 velocity_{};
         Boid(Vector2 position, Vector2 velocity);
         void update();
         void draw();
