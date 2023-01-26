@@ -2,7 +2,6 @@
 // Created by DorSh on 24-Jan-23.
 //
 
-#include <iostream>
 #include "Boid.h"
 
 Boid::Boid(Vector2 position, Vector2 velocity) {
@@ -15,7 +14,7 @@ void Boid::update() {
     position_.y += velocity_.y * 10;
 }
 
-void Boid::draw() {
+void Boid::draw() const {
     DrawCircleV(position_, 10, {255, 0, 0, 255});
     DrawLineV(position_, Vector2Add(position_, Vector2Scale(velocity_, 10)), {0, 0, 255, 255});
 }

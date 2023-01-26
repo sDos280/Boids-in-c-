@@ -1,7 +1,6 @@
 #include "raylib.h"
 #include "Boid.h"
 #include <vector>
-#include <iostream>
 
 int main() {
     // Initialization
@@ -22,14 +21,14 @@ int main() {
                                 Vector2{5, 5});
         }
 
-        for (Boid point: points) {
+        for (Boid& point: points) {
             point.update();
         }
 
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
-        for (Boid point: points) {
+        for (const Boid& point: points) {
             point.draw();
         }
         EndDrawing();
